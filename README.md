@@ -6,6 +6,6 @@ Plans for the future:
 2. Connect it with an Database
 3. Some new Commands to get the Weather from older days 
 4. Maybe some Graphs
-5. Maybe track the location and get the Weather from your direct location
+5. Maybe track your position and get the Weather from this location
 
 MORE COMING SOON!
