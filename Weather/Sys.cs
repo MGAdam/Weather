@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-   public class Sys
+    public class Sys
     {
-        public int type { get; set; }
-        public int id { get; set; }
-        public double message { get; set; }
-        public string country { get; set; }
-        public int sunrise { get; set; }
-        public int sunset { get; set; }
+        public int Type { get; set; }
+        public int Id { get; set; }
+        public double Message { get; set; }
+        public string Country { get; set; }
+        public int Sunrise { get; set; }
+        public int Sunset { get; set; }
     }
 }

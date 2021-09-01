@@ -8,11 +8,11 @@ namespace Weather
 {
     public class Main
     {
-        public double temp { get; set; }
-        public double feels_like { get; set; }
-        public double temp_min { get; set; }
-        public double temp_max { get; set; }
-        public int pressure { get; set; }
-        public int humidity { get; set; }
+        public double Temp { get; set; }
+        public double FeelsLike { get; set; }
+        public double TempMin { get; set; }
+        public double TempMax { get; set; }
+        public int Pressure { get; set; }
+        public int Humidity { get; set; }
     }
 }

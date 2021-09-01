@@ -18,9 +18,9 @@ namespace Weather
         public int dt { get; set; }
         public Sys sys { get; set; }
 
-        public int timezone { get; set; }
-        public int id { get; set; }
-        public string name { get; set; }
-        public int cod { get; set; }
+        public int Timezone { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Cod { get; set; }
     }
 }
