@@ -23,7 +23,9 @@ namespace Weather
             {
                 Console.WriteLine("\nException Caught!");
                 Console.WriteLine("Message :{0} ", e.Message);
+
             }
+
         }
 
         
