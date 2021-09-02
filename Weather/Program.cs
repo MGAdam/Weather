@@ -1,12 +1,31 @@
 ﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Weather
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        static readonly HttpClient client = new HttpClient();
+
+        static async Task Main()
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("");
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+
+                Console.WriteLine(responseBody);
+            }
+
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);
+            }
         }
+
+        
     }
 }
