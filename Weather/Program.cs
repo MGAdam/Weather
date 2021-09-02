@@ -12,7 +12,7 @@ namespace Weather
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("");
+                HttpResponseMessage response = await client.GetAsync("https://home.openweathermap.org/history_bulks/new");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
 
