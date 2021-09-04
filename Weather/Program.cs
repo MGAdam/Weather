@@ -16,12 +16,12 @@ namespace Weather
            var locator = new Windows.Devices.Geolocation.Geolocator();
 
             var position = (await locator.GetGeopositionAsync()).Coordinate.Point.Position;
-            NumberFormatInfo nfi = new NumberFormatInfo();
-            nfi.NumberDecimalSeparator = ".";
+            //NumberFormatInfo nfi = new NumberFormatInfo();
+            //nfi.NumberDecimalSeparator = ".";
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?lat={position.Latitude.ToString(nfi)}&lon={position.Longitude.ToString(nfi)}&appid=171dd6e6b0fe8d04a0fd21a1a4330d49&units=metric");
+                HttpResponseMessage response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?lat={position.Latitude}&lon={position.Longitude}&appid=171dd6e6b0fe8d04a0fd21a1a4330d49&units=metric");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
 
