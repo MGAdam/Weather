@@ -10,6 +10,8 @@ namespace Weather
 
         static async Task Main()
         {
+            
+
             try
             {
                 HttpResponseMessage response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?q={Console.ReadLine()}&appid=171dd6e6b0fe8d04a0fd21a1a4330d49");
@@ -28,6 +30,8 @@ namespace Weather
 
         }
 
+
         
     }
+
 }
