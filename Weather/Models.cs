@@ -9,7 +9,7 @@ namespace Weather
     public class Models
     {
         public Cord cordinations { get; set; }
-        public Weather weather { get; set; }
+        public List<Weather> weather { get; set; }
         public string baseone { get; set; }
         public Main main { get; set; }
         public int visbility { get; set; }
