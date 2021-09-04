@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -16,8 +15,6 @@ namespace Weather
            var locator = new Windows.Devices.Geolocation.Geolocator();
 
             var position = (await locator.GetGeopositionAsync()).Coordinate.Point.Position;
-            //NumberFormatInfo nfi = new NumberFormatInfo();
-            //nfi.NumberDecimalSeparator = ".";
 
             try
             {
