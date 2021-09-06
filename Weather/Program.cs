@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using CommandLine;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging.EventLog;
 using Newtonsoft.Json;
 
 namespace Weather
@@ -29,7 +30,7 @@ namespace Weather
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton(opts);
-                    services.AddHostedService<ImageClassifierWorker>()
+                    services.AddHostedService<WeatherClassifierWorker>()
                         .Configure<EventLogSettings>(config =>
                         {
                             config.LogName = "Image Classifier Service";
