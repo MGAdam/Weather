@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Weather
@@ -13,10 +14,10 @@ namespace Weather
         private SqueezeNetModel _squeezeNetModel;
         private readonly List<string> _labels = new List<string>();
 
-        private readonly ILogger<ImageClassifierWorker> _logger;
+        private readonly ILogger<WeatherClassifierWorker> _logger;
         private readonly CommandLineOptions _options;
 
-        public WeatherClassifierWorker(ILogger<ImageClassifierWorker> logger, CommandLineOptions options)
+        public WeatherClassifierWorker(ILogger<WeatherClassifierWorker> logger, CommandLineOptions options)
         {
             _logger = logger;
             _options = options;
@@ -24,7 +25,7 @@ namespace Weather
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            ...
+           // ...
         }
     }
 }
