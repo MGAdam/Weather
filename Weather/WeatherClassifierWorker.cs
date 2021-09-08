@@ -25,7 +25,11 @@ namespace Weather
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-           // ...
+            var tcs = new TaskCompletionSource<bool>();
+            stoppingToken.Register(s => ((TaskCompletionSource<bool>)s).SetResult(true), tcs);
+            await tcs.Task;
+
+            _logger.LogInformation("Service stopped");
         }
     }
 }
