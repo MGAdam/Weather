@@ -38,7 +38,7 @@ namespace Weather
                         });
                 }).UseWindowsService();
 
-        static async Task Main()
+        static async Task GetWeather()
         {
 
            var locator = new Windows.Devices.Geolocation.Geolocator();
