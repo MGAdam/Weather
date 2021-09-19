@@ -28,7 +28,7 @@ namespace Weather
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddSingleton(opts);
-                    services.AddHostedService<WeatherClassifierWorker>()
+                    services.AddHostedService<ImageClassifierWorker>()
                         .Configure<EventLogSettings>(config =>
                         {
                             config.LogName = "Image Classifier Service";
@@ -36,7 +36,7 @@ namespace Weather
                         });
                 }).UseWindowsService();
 
-        
+
     }
 
 }

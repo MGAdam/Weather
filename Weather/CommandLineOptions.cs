@@ -1,6 +1,4 @@
-﻿using CommandLine;
-
-namespace Weather
+﻿namespace Weather
 {
     public class CommandLineOptions
     {
