@@ -1,13 +1,9 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Toolkit.Uwp.Notifications;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,8 +21,6 @@ namespace Weather
         {
             _logger = logger;
         }
-
-
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -46,6 +40,14 @@ namespace Weather
                 Models m = JsonConvert.DeserializeObject<Models>(responseBody);
 
 
+                new ToastContentBuilder()
+                    .AddArgument("action", "viewConversation")
+                    .AddArgument("conversationId", 9813)
+                    .AddText($"Ort: {m.Name}")
+                    .AddText($"Tempmax: {m.main.TempMax}")
+                    .AddText($"Tempmin: {m.main.TempMin}")
+                    .Show();
+
 
                 Console.WriteLine($"Ort: {m.Name}, Tempmax: {m.main.TempMax}, Tempmin: {m.main.TempMin}");
             }
@@ -58,23 +60,14 @@ namespace Weather
             }
 
 
-
             var tcs = new TaskCompletionSource<bool>();
             stoppingToken.Register(s => ((TaskCompletionSource<bool>)s).SetResult(true), tcs);
             await tcs.Task;
 
             _logger.LogInformation("Service stopped");
 
-            
-
         }
 
-
-        //public static async Task GetWeather()
-        //{
-
-            
-        //}
 
     }
 }
