@@ -34,7 +34,7 @@ namespace Weather
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?lat={position.Latitude}&lon={position.Longitude}&appid=171dd6e6b0fe8d04a0fd21a1a4330d49&units=metric");
+                HttpResponseMessage response = await client.GetAsync($"[apikey]");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 Models m = JsonConvert.DeserializeObject<Models>(responseBody);
