@@ -34,7 +34,7 @@ namespace Weather
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync($"[apikey]");
+                HttpResponseMessage response = await client.GetAsync($"[APIKEY]");
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 Models m = JsonConvert.DeserializeObject<Models>(responseBody);
